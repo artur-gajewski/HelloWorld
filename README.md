@@ -4,6 +4,8 @@ This is a simple example of how to create a reusable service module along with i
 
 See [https://github.com/artur-gajewski/HelloWorld](https://github.com/artur-gajewski/HelloWorld)
 
+@Author: Artur Gajewski
+
 
 ## Installation
 
@@ -60,3 +62,9 @@ When you obtain the service and create the object, you can then use it to do the
 ```php
 $greeting = $hello->process('Mr. Bean');
 ```
+
+## Questions or comments?
+
+Feel free to email me with any questions or comments about this module
+
+[info@arturgajewski.com](mailto:info@arturgajewski.com)
