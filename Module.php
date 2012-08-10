@@ -25,8 +25,8 @@ class Module
                 'HelloWorld' => function($serviceManager) { 
                     $config = $serviceManager->get('Config');
                     $params = $config[__NAMESPACE__]['params'];
-                    $response = new Response($params);
-                    return $response; 
+                    $obj = new Response($params);
+                    return $obj; 
                 }   
             )
         ); 
