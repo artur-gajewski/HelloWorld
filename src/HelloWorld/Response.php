@@ -2,42 +2,22 @@
 
 namespace HelloWorld;
 
-use Zend\ServiceManager\ServiceManager;
-use Zend\ServiceManager\ServiceManagerAwareInterface;
-
-class Response implements ServiceManagerAwareInterface
+class Response
 {
-    /**
-     * @var ServiceManager 
-     */
-    protected $services;
-
     /**
      * @var Array 
      */
     protected $params;
 
     /**
-     * Set the ServiceManager for this class in order to fetch configurations
-     * 
-     * @param ServiceManager $serviceManager 
+     * Set the Module specific configuration parameters
      */
-    public function setServiceManager(ServiceManager $serviceManager)
-    {
-        $this->services = $serviceManager;
-        $this->setModuleParams();
-    }
-    
-    /**
-     * Set the Module specific configuration parameters into array 
-     */
-    protected function setModuleParams() {
-        $config = $this->services->get('Config');
-        $this->params = $config['HelloWorld']['params'];
+    public function __construct($params) {
+        $this->params = $params;
     }
 
     /**
-     * Process the string and return it
+     * Append prefix to the beginning of the name and return the string
      * 
      * @param String $name
      * @return String 

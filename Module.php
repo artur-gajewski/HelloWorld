@@ -22,8 +22,10 @@ class Module
     {
         return array(
             'factories' => array(
-                'HelloWorld' => function() { 
-                    $response = new Response();
+                'HelloWorld' => function($serviceManager) { 
+                    $config = $serviceManager->get('Config');
+                    $params = $config[__NAMESPACE__]['params'];
+                    $response = new Response($params);
                     return $response; 
                 }   
             )
